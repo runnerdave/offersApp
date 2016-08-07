@@ -15,7 +15,7 @@
 		<c:url var="logoutUrl" value="/logout" />
 		<div>
 			<form action="${logoutUrl}" method="post">
-				<input class="login" type="submit" value="Log	out" /> <input type="hidden"
+				<button type="submit" class="btn btn-default btn-lg"/>Log out</button> <input type="hidden"
 					name="${_csrf.parameterName}" value="${_csrf.token}" />
 			</form>
 		</div>
