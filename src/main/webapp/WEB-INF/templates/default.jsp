@@ -18,28 +18,37 @@
 	href="${pageContext.request.contextPath}/static/css/main.css"
 	type="text/css" media="all" />
 
+ <!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->	
+
 <tiles:insertAttribute name="includes"></tiles:insertAttribute>
 
 </head>
 <body>
+	<div class="container">
+		<div class="jumbotron">
+			<tiles:insertAttribute name="header"></tiles:insertAttribute>
+		</div>
 
-	<div class="header">
-		<tiles:insertAttribute name="header"></tiles:insertAttribute>
+		<div class="toolbar">
+			<tiles:insertAttribute name="toolbar"></tiles:insertAttribute>
+		</div>
+
+		<div class="content">
+			<tiles:insertAttribute name="content"></tiles:insertAttribute>
+		</div>
+
+		<hr />
+
+		<div class="footer">
+			<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+		</div>
 	</div>
-
-	<div class="toolbar">
-		<tiles:insertAttribute name="toolbar"></tiles:insertAttribute>
-	</div>
-
-	<div class="content">
-		<tiles:insertAttribute name="content"></tiles:insertAttribute>
-	</div>
-
-	<hr />
-
-	<div class="footer">
-		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
-	</div>
-
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/script/bootstrap.min.js"></script>
 </body>
 </html>
