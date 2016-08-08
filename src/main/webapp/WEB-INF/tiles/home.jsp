@@ -6,18 +6,27 @@
 
 
 
-
-<table class="offers">
-	<c:forEach var="offer" items="${offers}">
-		<tr>
-			<td class="name"><c:out value="${offer.user.name }"></c:out></td>
-			<td class="contact"><a
-				href="<c:url value='/message?uid=${offer.username }'/>">contact</a></td>
-			<td class="offer"><c:out value="${offer.text }"></c:out></td>
-		</tr>
-	</c:forEach>
-</table>
-
+<div class="container">
+	<table class="table table-hover">
+		<thead>
+	      <tr>
+	        <th>Name</th>
+	        <th>Contact</th>
+	        <th>Offer</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			<c:forEach var="offer" items="${offers}">
+				<tr>
+					<td class="name"><c:out value="${offer.user.name }"></c:out></td>
+					<td class="contact"><a
+						href="<c:url value='/message?uid=${offer.username }'/>">contact</a></td>
+					<td class="offer"><c:out value="${offer.text }"></c:out></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</div>
 
 
 <sec:authorize access="isAuthenticated()">

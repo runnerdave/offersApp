@@ -11,33 +11,44 @@
 		});
 	
 	</script>
-	<h3>Login with Username and Password</h3>
-	
-	<c:if test="${param.error != null}">
-	<p class="error">Login failed. Check that your username or password are correct</p>
-	</c:if>
-	
-	<form name='f' action='${pageContext.request.contextPath}/login' method='POST'>
-		<table class="formtable">
-			<tr>
-				<td>User:</td>
-				<td><input type='text' name='username' value=''></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='password' /></td>
-			</tr>
-			<tr>
-				<td>Remember me:</td>
-				<td><input type='checkbox' name='remember-me' checked="checked" /></td>
-			</tr>
-			<tr>
-				<td colspan='2'><input name="submit" type="submit"
-					value="Login" /></td>
-			</tr>
-			
-		</table>
-		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-	</form>
-	
-	<p><a href="<c:url value="/newaccount"/>">Create account</a></p>
+	<div class="container">
+		<h3>Login with Username and Password</h3>
+		
+		<c:if test="${param.error != null}">
+			<div class="alert alert-danger fade in">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">x</a>
+			  <strong>Login failed.</strong>
+			  Check that your username or password are correct.
+			</div>
+		</c:if>
+		
+		<form name='f' action='${pageContext.request.contextPath}/login' method='POST' class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">User:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="username" id="username" placeholder="Joan Doe">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Password:</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+				</div>
+			</div>
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <div class="checkbox">
+			        <label><input type="checkbox" name='remember-me' checked="checked"> Remember me</label>
+			      </div>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" name="submit" class="btn btn-default">Login</button>
+			    </div>
+			</div>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		</form>
+		
+		<a href="<c:url value="/newaccount"/>" class="btn btn-info" role="button">Create account</a>
+	</div>

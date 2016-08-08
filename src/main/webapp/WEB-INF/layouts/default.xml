@@ -15,7 +15,7 @@
 	
 	<definition name="home" extends="offers.base">
 		<put-attribute name="title" value="Offers Homepage"></put-attribute>
-		<put-attribute name="toolbar" value="/WEB-INF/tiles/toolbar.jsp"></put-attribute>
+		<put-attribute name="toolbar" value="/WEB-INF/tiles/toolbar_pills.jsp"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp"></put-attribute>
 	</definition>
 	

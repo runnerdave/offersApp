@@ -8,7 +8,7 @@
     <p>Welcome to the digital market for offers.</p>
     <sec:authorize access="!isAuthenticated()">
 	    <p>
-	    	<a href="<c:url value='/login'/> class="btn btn-info" role="button">Login</a>
+	    	<a href="<c:url value='/login'/>" class="btn btn-info" role="button">Login</a>
 	    </p>
     </sec:authorize>
     <sec:authorize access="isAuthenticated()">
